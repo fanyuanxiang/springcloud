@@ -1,6 +1,7 @@
 package com.chiry.clients;
 
 import com.chiry.entiry.Product;
+import com.chiry.fallback.ProductClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 
 //调用商品服务的Openfeign 组件
-@FeignClient(name = "products")   //作用：用来标识当前接口是一个feign的组件， value\name（default）：书写的是你要调用服务id
+@FeignClient(name = "products" ,fallback = ProductClientFallback.class)   //作用：用来标识当前接口是一个feign的组件， value\name（default）：书写的是你要调用服务id
 public interface ProductClient {    //该接口类直接使用，系统会自动进行实现。
 
     @GetMapping("/product/showMsg")
