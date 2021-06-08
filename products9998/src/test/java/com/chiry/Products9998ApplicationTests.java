@@ -3,11 +3,15 @@ package com.chiry;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class Products9998ApplicationTests {
+import java.time.ZonedDateTime;
 
-	@Test
-	void contextLoads() {
+
+class Products9998ApplicationTests {
+//获取本地时间
+	public static void main(String[] args) {
+		ZonedDateTime zonedDateTime =ZonedDateTime.now();
+
+		System.out.println(zonedDateTime);
 	}
 
 }
